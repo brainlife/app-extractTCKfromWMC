@@ -23,6 +23,6 @@ for it = 1:length(tractStruc)
     all_tracts(it).color = tractStruc{it}.colorRgb;
     all_tracts(it).filename = sprintf('%s.json',tractStruc{it}.name);
 end
-savejson('', all_tracts, fullfile(tractspath, 'tracts.json'));
+savejson('', all_tracts, 'output/tcks.json');
 
 end
