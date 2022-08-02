@@ -3,6 +3,8 @@
 set -e
 set -x
 
+NCORE=4
+
 tract=`jq -r '.track' config.json`
 names=(`cat names.csv`)
 indices='index.csv'
@@ -13,7 +15,7 @@ outdir='./tcks'
 
 # generate individual tractograms of all nodes
 echo "generating individual tractograms using connectome2tck"
-connectome2tck ${tract} ${indices} tmp -files per_node -keep_self
+connectome2tck ${tract} ${indices} tmp -files per_node -keep_self -nthreads=$NCORE
 
 # updating names
 echo "updating names"
