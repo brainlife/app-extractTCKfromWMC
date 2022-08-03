@@ -15,7 +15,7 @@ outdir='./tcks'
 
 # generate individual tractograms of all nodes
 echo "generating individual tractograms using connectome2tck"
-connectome2tck ${tract} ${indices} tmp -files per_node -keep_self -nthreads=$NCORE
+connectome2tck ${tract} ${indices} tmp -files per_node -keep_self
 
 # updating names
 echo "updating names"
