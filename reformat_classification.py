@@ -8,34 +8,31 @@ import nibabel as nib
 import scipy.io as sio
 import pandas as pd
 
-def save_info(names,indices):
-    
-    df_index = pd.DataFrame()
-    df_index['Index'] = indices
-    df_index.to_csv('index.csv',index=False,header=False)
-    
-    df_names = pd.DataFrame()
-    df_names['Name'] = names
-    df_names.to_csv('names.csv',index=False,header=False)
+def save_info(data,name):
+
+    with open(name,'wt') as out_file:
+        out_file.write("\n".join([str(f) for f in data]))
     
 def extract_indices(classification):
 
     print('extracting tract names from classification structure')
-    indices =  list(classification['classification'][0]['index'][0][0])
-    
+    # indices =  list(classification['classification'][0]['index'][0][0])
+    indices = classification['classification']['index'].tolist().tolist()
+
     return indices
 
 def extract_names(classification):
 
     print('extracting tract indices from classification structure')
-    names = [ f[0] for f in classification['classification'][0]['names'][0][0] ]
+    # names = [ f[0] for f in classification['classification'][0]['names'][0][0] ]
+    names = classification['classification']['names'].tolist().tolist()
     
     return names
     
 def load_classification(classification_path):
     
     print('loading classification structure')
-    classification = sio.loadmat(classification_path)
+    classification = sio.loadmat(classification_path,squeeze_me=True)
     
     return classification    
 
@@ -57,7 +54,8 @@ def main():
     names = extract_names(classification=classification)
     
     # save reformatted classification
-    save_info(names=names,indices=indices)
+    save_info(names,"names.txt")
+    save_info(indices,"index.txt")
     
 if __name__ == "__main__":
     main()
