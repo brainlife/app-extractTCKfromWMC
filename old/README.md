@@ -7,12 +7,10 @@ This application takes an [input tractography amalgum](https://brainlife.io/data
 WARNING: Submitting mismatched input TCK and WMC (e.g the WMC does not correspond to the TCK) will likely result in an error. However, in certian cases, this senario may also result in garbage output.  This would happen in the event that the mismatch cannot be inferred by the checks implemented by the code (i.e. matching streamline numbers).  This could also happen in the case that the order of the streamlines in the TCK has changed since the WMC was generated.
 
 ### Authors
-- [Brad Caron](https://github.com/bacaron) (bacaron@utexas.edu)
 - [Daniel Bullock](https://github.com/DanNBullock) (dnbulloc@iu.edu)
 
 ### Contributors
 - [Soichi Hayashi](https://github.com/soichih) (hayashis@iu.edu)
-
 
 ### Project Director
 - [Franco Pestilli](https://github.com/francopestilli) (franpest@indiana.edu)
@@ -82,10 +80,9 @@ The secondary output of this app is `product.json` and contains various descript
 
 This App requires the following libraries when run locally.
 
-  - singularity: https://docs.sylabs.io/guides/3.0/user-guide/installation.html
-  - MRtrix3: https://mrtrix.readthedocs.io/en/dev/installation/package_install.html
-  - pandas: https://pandas.pydata.org/docs/getting_started/install.html
-  - scipy: https://scipy.org/install/
-  - numpy: https://numpy.org/install/
-  - jq: https://stedolan.github.io/jq/download/
-  - python3: https://www.python.org/downloads/
+  - singularity: https://singularity.lbl.gov/
+  - VISTASOFT: https://github.com/vistalab/vistasoft/
+  - ENCODE: https://github.com/brain-life/encode
+  - SPM 8 or 12: https://www.fil.ion.ucl.ac.uk/spm/software/spm8/
+  - WMA: https://github.com/DanNBullock/wma_tools/tree/master
+  - jsonlab: https://github.com/fangq/jsonlab.git
