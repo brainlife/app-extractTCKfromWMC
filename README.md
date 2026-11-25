@@ -37,7 +37,7 @@ WARNING: Submitting mismatched input TCK and WMC (e.g the WMC does not correspon
 
 
 ### Project Director
-- [Franco Pestilli](https://github.com/francopestilli) (franpest@indiana.edu)
+- [Franco Pestilli](https://github.com/francopestilli) ([@francopestilli](https://github.com/francopestilli))
 
 
 ### Funding
