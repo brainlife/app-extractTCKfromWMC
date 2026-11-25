@@ -10,18 +10,18 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-> 📍 **This branch, `mrtrix3-v1.0`, runs 2 brainlife.io Apps** that share the same code:
+> **This branch, `mrtrix3-v1.0`, runs 2 brainlife.io Apps** that share the same code:
 >
 > - wmc to tcks ([doi:10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976))
 > - Extract multi-tcks from wmc + wbfg or composite tck ([doi:10.25663/brainlife.app.251](https://doi.org/10.25663/brainlife.app.251))
 >
 > The other Apps in this repository are listed under **Versions on brainlife.io** below.
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
-### 🧩 wmc to tcks
+### wmc to tcks
 
 > **Splits a whole-brain or composite tractogram into one .tck file per tract using the tract assignments in a white matter classification (wmc), with MRtrix3 connectome2tck.**
 
@@ -29,26 +29,26 @@ Converts the wmc classification into a streamline index list (DIPY container), t
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/wmc` · `neuro/track/tck` |
-| 📤 **Outputs** | `neuro/tcks` |
-| 🐳 **Container** | `brainlife/dipy:1.4.1` |
-| ⚙️ **Resources** | 4 CPUs · 30 GB memory · 1 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976) |
+| **Inputs** | `neuro/wmc` · `neuro/track/tck` |
+| **Outputs** | `neuro/tcks` |
+| **Container** | `brainlife/dipy:1.4.1` |
+| **Resources** | 4 CPUs · 30 GB memory · 1 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `classification` | `neuro/wmc` | yes | White matter classification (wmc) assigning streamlines to named tracts. |
 | `wbfg` | `neuro/track/tck` | yes | Whole-brain (or composite) tractogram the classification indexes into. Must be the tractogram used to generate the wmc classification. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
 | `tcks` | `neuro/tcks` | Directory with one .tck tractogram per classified tract. |
 
-### 🧩 Extract multi-tcks from wmc + wbfg or composite tck
+### Extract multi-tcks from wmc + wbfg or composite tck
 
 > **Splits a whole-brain or composite tractogram into one .tck file per tract using the tract assignments in a white matter classification (wmc), with MRtrix3 connectome2tck.**
 
@@ -56,20 +56,20 @@ Converts the wmc classification into a streamline index list (DIPY container), t
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/track/tck` · `neuro/wmc` |
-| 📤 **Outputs** | `neuro/tcks` |
-| 🐳 **Container** | `brainlife/dipy:1.4.1` |
-| ⚙️ **Resources** | 4 CPUs · 30 GB memory · 1 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.251](https://doi.org/10.25663/brainlife.app.251) |
+| **Inputs** | `neuro/track/tck` · `neuro/wmc` |
+| **Outputs** | `neuro/tcks` |
+| **Container** | `brainlife/dipy:1.4.1` |
+| **Resources** | 4 CPUs · 30 GB memory · 1 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.251](https://doi.org/10.25663/brainlife.app.251) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `wbfg` | `neuro/track/tck` | yes | Whole-brain (or composite) tractogram the classification indexes into. Must be the tractogram used to generate the wmc classification. |
 | `classification` | `neuro/wmc` | yes | White matter classification (wmc) assigning streamlines to named tracts. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -77,7 +77,7 @@ Converts the wmc classification into a streamline index list (DIPY container), t
 
 <!-- brainlife-app:end -->
 
-## 🏷️ Versions on brainlife.io
+## Versions on brainlife.io
 
 Both Apps are built from the [`mrtrix3-v1.0`](https://github.com/brainlife/app-extractTCKfromWMC/tree/mrtrix3-v1.0) branch and run the same code.
 
@@ -86,7 +86,7 @@ Both Apps are built from the [`mrtrix3-v1.0`](https://github.com/brainlife/app-e
 | **wmc to tcks** (this branch) | 3.0.3 | [`mrtrix3-v1.0`](https://github.com/brainlife/app-extractTCKfromWMC/tree/mrtrix3-v1.0) | [doi:10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976) | current |
 | **Extract multi-tcks from wmc + wbfg or composite tck** (this branch) | 3.0.3 | [`mrtrix3-v1.0`](https://github.com/brainlife/app-extractTCKfromWMC/tree/mrtrix3-v1.0) | [doi:10.25663/brainlife.app.251](https://doi.org/10.25663/brainlife.app.251) | current |
 
-## 🔬 How it works
+## How it works
 
 The App takes an [input tractogram](https://brainlife.io/datatypes/5907d922436ee50ffde9c549), either a whole-brain fiber group (WBFG) or a composite of tracts, and the [White Matter Classification (WMC)](https://brainlife.io/datatype/5cc1d64c44947d8aea6b2d8b) that assigns its streamlines to tracts.
 
@@ -97,13 +97,13 @@ It is meant to make per-tract tractograms easy to use for visualisation and for 
 
 > **Warning:** the tractogram must be the one the classification was computed on. A mismatched tractogram and WMC will usually cause an error, but if the mismatch cannot be detected (for example the streamline count matches but the streamline order has changed since the WMC was made) the output will be wrong without any error.
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976), choose a `neuro/track/tck` tractogram and the `neuro/wmc` classification computed on it, and press **Execute**. The per-tract tractograms are archived to your project as a [`neuro/tcks`](https://brainlife.io/datatypes/5dcf0047c4ae28d7f2298f48) dataset.
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqlang.github.io/jq/). `main` runs the steps in the `brainlife/dipy:1.4.1` and `brainlife/mrtrix3:3.0.3` containers.
 
@@ -123,7 +123,7 @@ You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqla
    ./main
    ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 tcks/
@@ -131,11 +131,11 @@ tcks/
 └── …
 ```
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **`something went wrong. check derivatives and logs`**: no `.tck` files were written to `tcks/`. Make sure the WMC classification was computed on the tractogram you provided.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -147,7 +147,7 @@ tcks/
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Scientific Data* 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
-## 👥 Authors
+## Authors
 
 - Franco Pestilli (project director)
 - [Brad Caron](https://github.com/bacaron)
@@ -155,7 +155,7 @@ tcks/
 
 **Contributors:** [Soichi Hayashi](https://github.com/soichih)
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -174,6 +174,6 @@ tcks/
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](LICENSE). MRtrix3 is distributed under its own [license](https://www.mrtrix.org/).
