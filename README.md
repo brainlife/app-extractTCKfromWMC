@@ -2,6 +2,28 @@
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.251-blue.svg)](https://doi.org/10.25663/brainlife.app.251)
 
 # app-extractTCKfromWMC
+
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Splits a whole-brain or composite tractogram into one .tck file per tract using the tract assignments in a white matter classification (wmc), with MRtrix3 connectome2tck.**
+
+Converts the wmc classification into a streamline index list (DIPY container), then runs MRtrix3 connectome2tck to write each classified tract as its own .tck file named after the tract. Use it to obtain per-tract tractograms for visualisation or tract-wise analysis. The tck input must be the tractogram the classification was computed on, so that streamline indices match.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.976](https://doi.org/10.25663/brainlife.app.976)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `classification` | `neuro/wmc` | yes | White matter classification (wmc) assigning streamlines to named tracts. |
+| `wbfg` | `neuro/track/tck` | yes | Whole-brain (or composite) tractogram the classification indexes into. Must be the tractogram used to generate the wmc classification. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `tcks` | `neuro/tcks` | Directory with one .tck tractogram per classified tract. |
+
+Runtime: container `brainlife/dipy:1.4.1`; 4 CPUs; 30 GB memory; 1 h walltime.
+
+<!-- brainlife-app:end -->
+
 This application takes an [input tractography amalgum](https://brainlife.io/datatypes/5907d922436ee50ffde9c549) (i.e. whole brain fiber group (WBFG) or composite) and, using the categories designated in the associated [White Matter Classification (WMC) structure](https://brainlife.io/datatype/5cc1d64c44947d8aea6b2d8b) input, extracts and outputs a tck file for each category into the output directory. Intended to facilitate users performing analyses offline/outside of the brainlife platform.
 
 WARNING: Submitting mismatched input TCK and WMC (e.g the WMC does not correspond to the TCK) will likely result in an error. However, in certian cases, this senario may also result in garbage output.  This would happen in the event that the mismatch cannot be inferred by the checks implemented by the code (i.e. matching streamline numbers).  This could also happen in the case that the order of the streamlines in the TCK has changed since the WMC was generated.
