@@ -13,7 +13,7 @@ WARNING: Submitting mismatched input TCK and WMC (e.g the WMC does not correspon
 - [Soichi Hayashi](https://github.com/soichih) (hayashis@iu.edu)
 
 ### Project Director
-- [Franco Pestilli](https://github.com/francopestilli) (franpest@indiana.edu)
+- [Franco Pestilli](https://github.com/francopestilli) ([@francopestilli](https://github.com/francopestilli))
 
 
 ### Funding
